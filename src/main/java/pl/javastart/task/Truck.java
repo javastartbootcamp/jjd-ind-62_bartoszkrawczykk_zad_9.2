@@ -15,4 +15,12 @@ public class Truck extends Car {
         super(name, tankCapacity, averageFuelConsumption, airConditioning);
         this.loadWeight = loadWeight;
     }
+
+    @Override
+    public double getAverageFuelConsumption() {
+        if (isAirConditioning()) {
+            return super.getAverageFuelConsumption() + 0.8;
+        }
+        return super.getAverageFuelConsumption();
+    }
 }

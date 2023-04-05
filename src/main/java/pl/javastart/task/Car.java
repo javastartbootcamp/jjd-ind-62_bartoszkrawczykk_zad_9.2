@@ -15,4 +15,12 @@ public class Car extends Vehicle {
     public void setAirConditioning(boolean airConditioning) {
         this.airConditioning = airConditioning;
     }
+
+    @Override
+    public double getAverageFuelConsumption() {
+        if (isAirConditioning()) {
+            return super.getAverageFuelConsumption() + 0.8;
+        }
+        return super.getAverageFuelConsumption();
+    }
 }
